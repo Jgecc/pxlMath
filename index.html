@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="//unpkg.com/mathlive"></script>
+    <script src="//unpkg.com/@cortex-js/compute-engine"></script>
+    <!--<link rel="stylesheet" href="style.css">-->
+</head>
+<body>
+    <label>Mathfield</label>
+    <math-field id="formula" virtual-keyboard-mode="manual">
+        x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}
+    </math-field>
+    <label>Latex</label>
+    <textarea class="output" id="latex" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"></textarea>
+    <math-field id="simplify"></math-field>
+<script src="main.js"></script>
+</body>
+</html>
