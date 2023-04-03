@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="//unpkg.com/mathlive"></script>
+    <script defer src="//unpkg.com/mathlive"></script>
     <script src="//unpkg.com/@cortex-js/compute-engine"></script>
-    <!--<link rel="stylesheet" href="style.css">-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+    <link rel="stylesheet" href="style.css">
+    <!---->
 </head>
 <body>
-    <label>Mathfield</label>
-    <math-field id="formula" virtual-keyboard-mode="manual">
-        x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}
-    </math-field>
-    <label>Latex</label>
-    <textarea class="output" id="latex" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"></textarea>
-    <math-field id="simplify"></math-field>
-<script src="main.js"></script>
+    <ul>
+        <li>
+            <label>Mathfield</label>
+            <math-field id="formula" virtual-keyboard-mode="manual">
+                x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}
+            </math-field>
+        </li>
+        <li>
+            <label>Latex</label>
+            <textarea class="output" id="latex" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" ></textarea>
+
+        </li>
+        <li>
+            <label>Simplify</label>
+            <math-field id="simplify"></math-field>
+        </li>
+        <li>
+            <label>Evaluate</label>
+            <math-field id="evaluate"></math-field>
+        </li>
+        <li>
+            <label>Excact</label>
+            <math-field id="excact"></math-field>
+        </li>
+        <li>
+            <label>Download Equation as svg</label>
+            <button type="button" id="download">Download</button>
+        </li>
+    </ul>
+
+    <script src="main.js"></script>
+    <script src="stylechanges.js"></script>
+    <script src="latexToImg.js"></script>
 </body>
 </html>

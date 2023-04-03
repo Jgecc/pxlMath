@@ -1,7 +1,21 @@
 body {
-    background: black;
+    background: rgba(0, 0, 0, 0.95);
+    color: azure;
 }
 
 math-field {
-    color: aliceblue;
+    background: grey;
+    color: azure;
+}
+
+textarea {
+    background: grey;
+    color: azure;
+    resize: none;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+li {
+    list-style-type: none;
 }
