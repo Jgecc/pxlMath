@@ -1,3 +1,6 @@
+//THIS FILE CREATES THE DOWNLOADABLE SVG LATEX
+
+//This function converts a String to Svg
 function convertToSvg(text, callback) {
     // Create a script element with the LaTeX code
     const hiddenElement = document.createElement('div');
@@ -58,8 +61,7 @@ function convertToSvg(text, callback) {
     });
 }
 
-let finalsvg;
-
+//This function creates the download
 function download(filename, text) {
     var pom = document.createElement('a');
     pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -75,13 +77,12 @@ function download(filename, text) {
     }
 }
 
+//Creates a link to the download button and calls the  convertToSvg function and download functon
 const downButton = document.getElementById('download');
 downButton.addEventListener("click", downloadSvg);
 
 function downloadSvg() {
-    console.log(latex);
     convertToSvg(latex.toString(), ({ height, svg, width }) => {
         download('latexSvg.svg', svg)
     });
 }
-

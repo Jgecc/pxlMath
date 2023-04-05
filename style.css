@@ -29,6 +29,7 @@ body::-webkit-scrollbar-thumb {
     background: darkgoldenrod;
 }
 
+/*Specific details*/
 
 h1 {
     text-align: center;
@@ -141,7 +142,7 @@ footer {
     padding-top: 5px;
 }
 
-/* Small screens */
+/*Small screens*/
 @media only screen and (max-width: 700px) {
 
     .inner-footer {
