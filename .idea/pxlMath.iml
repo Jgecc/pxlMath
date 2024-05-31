@@ -14,5 +14,8 @@
     <orderEntry type="library" name="mathjax" level="application" />
     <orderEntry type="library" name="mathlive" level="application" />
     <orderEntry type="library" name="mathlive" level="application" />
+    <orderEntry type="library" name="mathlive" level="application" />
+    <orderEntry type="library" name="@cortex-js" level="application" />
+    <orderEntry type="library" name="mathjax" level="application" />
   </component>
 </module>

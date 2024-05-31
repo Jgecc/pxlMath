@@ -1,10 +1,10 @@
-/*General form*/
+/* General form */
 :root {
     font-size: 16px;
     font-family: sans-serif;
     --text-primary: #b6b6b6;
     --text-secondary: #ececec;
-    --bg-primary: #23232e;
+    --bg-primary: #1c1c20;
     --bg-secondary: #141418;
     --transition-speed: 600ms;
 }
@@ -12,11 +12,15 @@
 body {
     margin: 0;
     padding: 0;
-    background: #313237;
+    background: #19191b;
     color: var(--text-primary);
 }
 
-/*Slider style*/
+.ML__keyboard {
+    height: 50%;
+}
+
+/* Slider style */
 body::-webkit-scrollbar {
     width: 0.25rem;
 }
@@ -29,34 +33,65 @@ body::-webkit-scrollbar-thumb {
     background: darkgoldenrod;
 }
 
-/*Specific details*/
+/* Specific details */
 
 h1 {
     text-align: center;
 }
 
+/* UI Elements */
+
 math-field {
+    width: 80%;
     background: var(--bg-primary);
     color: var(--text-primary);
 }
 
 textarea {
+    width: 81%;
     background: var(--bg-primary);
     color: var(--text-primary);
     resize: none;
+    border: 1px solid #acacac;
     border-radius: 2px;
     overflow: auto;
-    width: 300px;
     height: 100px;
 }
+
+button {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    box-shadow: none;
+    border: 1px solid #acacac;
+    border-radius: 2px;
+    height: 20px;
+}
+
+/* List Style */
 
 li {
     list-style-type: none;
     margin-bottom: 10px;
+    display: flex;
 }
 
+.input-list {
+    width: 100%;
+    border-spacing: 0 1px;  /* border-spacing will be used for gaps between list items */
+    display: table;
+}
+.input-list > li {
+  display: table-row;
+}
+.input-list > li > label,
+.input-list > li > span {
+  display: table-cell;
+}
+
+/* Backdrop */
+
 .boxArround, ul {
-    background: #2f2f2f;
+    background: #1b1b1b;
     box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
     max-width: 960px;
     margin: 30px auto;
@@ -64,17 +99,7 @@ li {
     border-radius: 10px;
 }
 
-button {
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    box-shadow: none;
-    border: none;
-    border-radius: 2px;
-    height: 20px;
-}
-
-
-/*Footer*/
+/* Footer */
 footer {
     width: 100%;
     display: block;
@@ -93,7 +118,7 @@ footer {
 }
 
 
-/*last footer*/
+/* last footer */
 .inner-footer .footer-third {
     width: calc(20.6666666667% - 20px);
     margin-right: 10px;
@@ -142,8 +167,13 @@ footer {
     padding-top: 5px;
 }
 
-/*Small screens*/
+/* Small screens */
 @media only screen and (max-width: 700px) {
+
+    .boxArround, ul {
+        margin-left: 5px;
+        padding-left: 5px;
+    }
 
     .inner-footer {
         padding-left: 10px;

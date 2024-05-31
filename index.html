@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="https://cdn.jsdelivr.net/npm/mathlive@0.90.7/dist/mathlive.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathlive@0.98.6/dist/mathlive.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@cortex-js/compute-engine"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG"></script>
@@ -13,7 +13,7 @@
 
     <h1>pxlMath</h1>
 
-    <ul>
+    <ul class="input-list">
         <li>
             <label>Mathfield</label>
             <math-field id="formula" virtual-keyboard-mode="manual">
@@ -27,19 +27,15 @@
         </li>
         <li>
             <label>Simplify</label>
-            <math-field id="simplify"></math-field>
+            <math-field read-only id="simplify"></math-field>
         </li>
         <li>
             <label>Evaluate</label>
-            <math-field id="evaluate"></math-field>
+            <math-field read-only id="evaluate"></math-field>
         </li>
         <li>
             <label>Exact</label>
-            <math-field id="exact"></math-field>
-        </li>
-        <li>
-            <label>Excel</label>
-            <textarea class="output" id="excel" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"></textarea>
+            <math-field read-only id="exact"></math-field>
         </li>
         <li>
             <label>Download Equation as svg</label>

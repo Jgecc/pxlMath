@@ -21,10 +21,6 @@ mf.addEventListener('input',(ev) => {
     document.getElementById('simplify').value = expr.simplify().json;
     document.getElementById('evaluate').value = expr.evaluate().json;
     document.getElementById('exact').value = expr.N().json;
-
-    //Excel equation
-    toExcel();
-    document.getElementById('excel').value = excel;
 });
 
 // Listen for changes in the latex text field, and reflect its value in the mathfield.
@@ -42,70 +38,3 @@ addEventListener('input', (ev) => {
     expr = ce.parse(mf.value);
     document.getElementById('simplify').value = expr.simplify().json;
 });
-
-//CREATE EXCEL EQUATION
-
-//Always the latest excel equation
-let excel;
-function toExcel() {
-    excel = latex.replaceAll("\\left", "");
-    excel = excel.replaceAll("\\right", "");
-    excel = excel.replaceAll("\\pm", "PM");
-    excel = excel.replaceAll("\\placeholder{▢}", "▢");
-    replaceFrac()
-    excel = excel.replaceAll("\\", "");
-    excel = excel.replaceAll("{", "(");
-    excel = excel.replaceAll("}", ")");
-
-}
-
-//Transforms Fractions from Latex to Excel equation
-function replaceFrac() {
-
-    let count = 0;
-    let beggingFound = false;
-    let beggingIndex = null;
-
-    for (const i in excel) {
-
-        //Finds where the brackets for the frac start in Latex equation
-        if (!beggingFound) {
-
-            if (excel[i] === "\\") {
-                let j = parseInt(i);
-
-                if (excel[j + 1] === "f") {
-
-                    if (excel[j + 2] === "r") {
-
-                        if (excel[j + 3] === "a") {
-
-                            if (excel[j + 4] === "c") {
-
-                                beggingIndex = j + 5;
-                                beggingFound = true;
-                                //console.log(beggingIndex)
-
-                            }
-                        }
-                    }
-                }
-            }
-
-        //Inserts the / in the right postition
-        }else if (parseInt(i) >= beggingIndex){
-
-            if (excel[i] === "{") {
-                count++;
-
-            } else if (excel[i] === "}") {
-                count--;
-
-            }if (count === 0) {
-                excel = excel.substring(0, parseInt(i) + 1) + "/" + excel.substring(parseInt(i) + 1, excel.length);
-                excel = excel.replace("\\frac", "");
-                beggingFound = false;
-            }
-        }
-    }
-}
